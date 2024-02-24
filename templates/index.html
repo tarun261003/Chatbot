@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #008080;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        h1 {
+            color: #333;
+        }
+        center {
+            margin-bottom: 20px;
+        }
+        form {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: row; /* Horizontal layout */
+        }
+        label {
+            margin-right: 10px;
+        }
+        input[type="text"] {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 16px;
+            outline: none;
+            width: 300px;
+            max-width: calc(100% - 100px); /* Adjust based on button width */
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 6px;
+            background-color: #007bff;
+            color: #fff;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .chat-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #000; /* Black background */
+            color: #fff; /* White text color */
+            border-radius: 8px;
+            margin-top: 20px;
+        }
+        .user-message {
+            background-color:  #333;
+            border-radius: 12px;
+            padding: 10px 15px;
+            margin-bottom: 10px;
+            width: fit-content;
+            max-width: 70%;
+            word-wrap: break-word;
+        }
+        .bot-message {
+           /* Black background for bot's response */
+            color: #fff; /* White text color for better contrast */
+            border-radius: 12px;
+            padding: 10px 15px;
+            margin-bottom: 10px;
+            width: fit-content;
+            max-width: 70%;
+            word-wrap: break-word;
+        }
+        pre {
+            background-color: #000; /* Black background for preformatted text */
+            color: #fff; /* White text color for better contrast */
+            padding: 10px;
+            border-radius: 6px;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+    <center><h1>ॐ chatbot</h1></center>
+    <form action="/" method="post">
+        <label for="chat">Enter here:</label>
+        <input type="text" id="chat" placeholder="enter your query" name="chat">
+        <input type="submit" value="Send">
+    </form>
+    <div class="chat-container" id="chat-container">
+        {% if data %}
+        <div class="user-message">{{ data[0] }}</div>
+        <div class="bot-message"><pre>{{ data[1] }}</pre></div>
+        {% else %}
+        <p>hello boss! i can help you </p>
+        {% endif %}
+    </div>
+</body>
+</html>
