@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Chatbot</title>
+</head>
+<body>
+	<center><h1>Csd chatbot</h1></center>
+	<form action="/" method="post">
+		<label for="">Enter here:</label>
+		<input type="text" placeholder="enter your query" name="chat">
+		<input type="submit" value="Send">
+	</form>	
+	{% if data %}
+	<label><strong>Your query:</strong></label><p>{{ data[0] }}</p>
+	<label><strong>My response:</strong></label><pre>{{ data[1] }}</pre>
+	{% else %}
+	<p>Wait first give query ...</p>
+	{% endif %}
+</body>
+</html>
