@@ -25,3 +25,12 @@ if __name__=="__main__":
     genai.configure(api_key=config.api)
     model = genai.GenerativeModel('gemini-pro')
     app.run(debug=True)
+
+
+
+
+
+
+
+
+#vs code forever
