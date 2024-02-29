@@ -11,7 +11,6 @@ def home():
     if request.method=='POST':
         chat=request.form['chat']
         if chat :
-            print(chat)
             t=model.generate_content(chat)
             try:
                 s=to_markdown(t.text)
